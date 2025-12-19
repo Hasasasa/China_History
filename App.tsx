@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { DYNASTIES, INITIAL_DYNASTY_DATA } from './constants';
 import { STATIC_DYNASTY_DATA } from './data';
 import { HistoricalLocation, HistoricalState, Coordinates } from './types';

@@ -16,7 +16,6 @@ const LocationDetailPanel: React.FC<LocationDetailPanelProps> = ({ location, onC
   if (!location) return null;
 
   const isStateItem = isState(location);
-  const isCapital = isStateItem || (location as HistoricalLocation).type === 'capital';
 
   return (
     <div className="absolute top-6 right-6 bottom-24 z-[400] w-96 pointer-events-none">

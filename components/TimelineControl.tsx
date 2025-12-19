@@ -92,8 +92,6 @@ const TimelineControl: React.FC<TimelineControlProps> = ({ dynasties, currentInd
                const shortName = d.name.replace('朝','').replace('西周','西').replace('东周','东').replace('五代十国','五代').replace('北宋','北').replace('南宋','南');
                const isActive = i === currentIndex;
                const percentage = (i / (dynasties.length - 1)) * 100;
-               const isMajor = i === 0 || i === dynasties.length - 1 || i % 2 === 0;
-
                return (
                  <div 
                     key={d.id} 
