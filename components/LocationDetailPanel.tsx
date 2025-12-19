@@ -1,5 +1,6 @@
 import React from 'react';
 import { HistoricalLocation, HistoricalState } from '../types';
+import logo from '../logo/logo.png';
 
 interface LocationDetailPanelProps {
   location: HistoricalLocation | HistoricalState | null;
@@ -42,9 +43,16 @@ const LocationDetailPanel: React.FC<LocationDetailPanelProps> = ({ location, onC
                     <span className="text-xs text-stone-400 font-serif">今: {(location as HistoricalLocation).modernName}</span>
                 )}
             </div>
-            <h2 className="text-3xl font-display text-ink mb-1 drop-shadow-sm">
-                {location.name}
-            </h2>
+            <div className="flex items-center gap-3">
+              <img
+                src={logo}
+                alt="logo"
+                className="w-7 h-7 object-contain drop-shadow-sm flex-shrink-0"
+              />
+              <h2 className="text-3xl font-display text-ink mb-1 drop-shadow-sm">
+                  {location.name}
+              </h2>
+            </div>
             {isStateItem && (
                  <div className="flex items-center gap-3 text-sm font-serif text-stone-500 mt-2">
                     <span className="flex items-center gap-1">

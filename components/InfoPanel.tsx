@@ -1,6 +1,7 @@
 import React from 'react';
 import { DynastyData, HistoricalLocation, HistoricalState } from '../types';
 import { DYNASTIES } from '../constants';
+import logo from '../logo/logo.png';
 
 interface InfoPanelProps {
   data: DynastyData | null;
@@ -39,7 +40,12 @@ const InfoPanel: React.FC<InfoPanelProps> = ({ data, currentDynastyId, loading, 
 
         {/* Title Section */}
         <div className="flex flex-col mb-4 flex-shrink-0 relative">
-          <div className="flex items-baseline gap-3">
+          <div className="flex items-center gap-3">
+             <img
+               src={logo}
+               alt="logo"
+               className="w-8 h-8 object-contain drop-shadow-sm flex-shrink-0"
+             />
              <h2 className="text-4xl font-bold text-ink tracking-wide font-display drop-shadow-sm">
               {dynastyInfo.name}
             </h2>
