@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>中国历史朝代可视化</title>
+    <!-- Tailwind CSS Script (For production, installing tailwind via postcss is better, but CDN works for simple deployment) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['"Noto Serif SC"', 'serif'],
+              display: ['"Ma Shan Zheng"', 'cursive'],
+              sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+            },
+            colors: {
+              'cinnabar': '#8B2E28', 
+              'bronze': '#B08D55',   
+              'ink': '#2B2B2B',      
+              'paper': '#F9F7F2',    
+              'paper-dark': '#EDEADF',
+              'jade': '#5C8276',     
+              'charcoal': '#4A4A4A',
+              'stone-light': '#F5F5F4',
+            },
+            boxShadow: {
+              'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+            },
+            backdropBlur: {
+              'xs': '2px',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html, body, #root {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      body {
+        background-color: #F9F7F2;
+        color: #2B2B2B;
+      }
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 3px; }
+      ::-webkit-scrollbar-thumb:hover { background: #9CA3AF; }
+      
+      .leaflet-container {
+        width: 100%;
+        height: 100%;
+        background: #F9F7F2;
+        z-index: 10;
+        font-family: "Noto Serif SC", serif;
+      }
+      .leaflet-popup-content-wrapper {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        color: #2B2B2B;
+        border: 1px solid rgba(176, 141, 85, 0.3);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+      }
+      .leaflet-popup-tip {
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid rgba(176, 141, 85, 0.3);
+      }
+      .leaflet-popup-content {
+        margin: 12px 16px;
+        font-family: "Noto Serif SC", serif;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "leaflet": "https://esm.sh/leaflet@^1.9.4",
+    "react-leaflet": "https://esm.sh/react-leaflet@^5.0.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
