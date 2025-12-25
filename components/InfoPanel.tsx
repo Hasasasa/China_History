@@ -31,37 +31,37 @@ const InfoPanel: React.FC<InfoPanelProps> = ({ data, currentDynastyId, loading, 
   const cultureAndTrade = data.locations.filter(l => l.type === 'cultural' || l.type === 'trade');
 
   return (
-    <div className="absolute top-6 left-6 z-[400] max-w-sm w-full pointer-events-none">
+    <div className="absolute top-3 left-3 z-[400] pointer-events-none w-[60vw] max-w-[240px] sm:top-6 sm:left-6 sm:w-full sm:max-w-sm">
       {/* Main Glass Card */}
-      <div className="bg-white/80 backdrop-blur-xl border border-white/40 shadow-glass rounded-xl p-6 transition-all duration-500 pointer-events-auto max-h-[calc(100vh-120px)] overflow-hidden flex flex-col relative group">
+      <div className="bg-white/80 backdrop-blur-xl border border-white/40 shadow-glass rounded-xl p-3 sm:p-6 transition-all duration-500 pointer-events-auto max-h-[45vh] sm:max-h-[calc(100vh-120px)] overflow-hidden flex flex-col relative group">
         
         {/* Decorative background element */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-bronze/5 to-transparent rounded-bl-full pointer-events-none -z-10"></div>
 
         {/* Title Section */}
-        <div className="flex flex-col mb-4 flex-shrink-0 relative">
+        <div className="flex flex-col mb-3 sm:mb-4 flex-shrink-0 relative">
           <div className="flex items-center gap-3">
              <img
                src={logo}
                alt="logo"
                className="w-8 h-8 object-contain drop-shadow-sm flex-shrink-0"
              />
-             <h2 className="text-4xl font-bold text-ink tracking-wide font-display drop-shadow-sm">
+             <h2 className="text-xl sm:text-4xl font-bold text-ink tracking-wide font-display drop-shadow-sm">
               {dynastyInfo.name}
             </h2>
             <div className="h-px flex-grow bg-gradient-to-r from-bronze/50 to-transparent self-center mt-2"></div>
           </div>
-          <span className="text-bronze font-serif italic text-sm mt-1 tracking-wider">
+          <span className="text-bronze font-serif italic text-[11px] sm:text-sm mt-1 tracking-wider">
              {dynastyInfo.period}
           </span>
         </div>
         
         {/* Summary Content */}
-        <div className="space-y-4 mb-6 flex-shrink-0">
-          <p className="text-charcoal/90 text-sm leading-7 font-serif text-justify border-l-2 border-bronze/20 pl-3">
+        <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6 flex-shrink-0">
+          <p className="text-charcoal/90 text-[11px] sm:text-sm leading-6 sm:leading-7 font-serif text-justify border-l-2 border-bronze/20 pl-3">
             {data.summary}
           </p>
-          <div className="text-xs leading-relaxed text-stone-500 bg-stone-50/50 p-2.5 rounded border border-stone-100 font-sans flex gap-2">
+          <div className="text-[10px] sm:text-xs leading-relaxed text-stone-500 bg-stone-50/50 p-2.5 rounded border border-stone-100 font-sans flex gap-2">
             <span className="flex-shrink-0 text-bronze">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             </span>

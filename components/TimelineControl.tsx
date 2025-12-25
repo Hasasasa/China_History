@@ -32,8 +32,8 @@ const TimelineControl: React.FC<TimelineControlProps> = ({ dynasties, currentInd
   const progressPercent = (currentIndex / (dynasties.length - 1)) * 100;
 
   return (
-    <div className="absolute bottom-8 left-0 right-0 z-[400] flex justify-center px-4">
-      <div className="bg-white/80 backdrop-blur-md rounded-full shadow-glass p-2 pl-3 pr-6 flex items-center gap-4 border border-white/50 max-w-4xl w-full">
+    <div className="absolute bottom-4 sm:bottom-8 left-0 right-0 z-[400] flex justify-center px-3 sm:px-4">
+      <div className="bg-white/80 backdrop-blur-md rounded-full shadow-glass p-2 pl-2 pr-3 sm:pl-3 sm:pr-6 flex items-center gap-3 sm:gap-4 border border-white/50 max-w-4xl w-full">
         
         {/* Controls Group */}
         <div className="flex items-center gap-2 flex-shrink-0">
@@ -59,7 +59,7 @@ const TimelineControl: React.FC<TimelineControlProps> = ({ dynasties, currentInd
         </div>
 
         {/* Timeline Slider Area */}
-        <div className="flex-1 relative h-12 flex flex-col justify-center mx-2 group">
+        <div className="flex-1 relative h-10 sm:h-12 flex flex-col justify-center mx-2 group">
           
           {/* Track Layer */}
           <div className="relative w-full h-0.5 bg-stone-300 rounded-full">

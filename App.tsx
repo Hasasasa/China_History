@@ -43,7 +43,7 @@ const App: React.FC = () => {
   const activeZoom = manualView ? manualView.zoom : currentData.zoom;
 
   return (
-    <div className="h-screen w-screen bg-paper overflow-hidden relative font-sans text-ink">
+    <div className="h-full w-full bg-paper overflow-hidden relative font-sans text-ink">
       
       {/* Map Layer */}
       <div className="absolute inset-0 z-0">

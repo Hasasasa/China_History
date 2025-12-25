@@ -18,14 +18,14 @@ const LocationDetailPanel: React.FC<LocationDetailPanelProps> = ({ location, onC
   const isStateItem = isState(location);
 
   return (
-    <div className="absolute top-6 right-6 bottom-24 z-[400] w-96 pointer-events-none">
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[400] h-[60vh] pointer-events-none w-[88vw] max-w-[360px] sm:top-6 sm:right-6 sm:bottom-24 sm:left-auto sm:h-auto sm:w-96 sm:translate-x-0 sm:translate-y-0">
       <div className="bg-white/90 backdrop-blur-xl rounded-xl shadow-2xl border border-white/50 h-full flex flex-col overflow-hidden pointer-events-auto transform transition-all duration-500 animate-slide-in-right relative">
         
         {/* Artistic Background Overlay */}
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/rice-paper-2.png')] opacity-30 pointer-events-none z-0"></div>
 
         {/* Header */}
-        <div className="relative z-10 p-6 pb-4 border-b border-stone-200/60 bg-gradient-to-b from-white/80 to-transparent">
+        <div className="relative z-10 p-4 sm:p-6 pb-3 sm:pb-4 border-b border-stone-200/60 bg-gradient-to-b from-white/80 to-transparent">
            <button 
             onClick={onClose}
             className="absolute top-4 right-4 text-stone-400 hover:text-ink hover:bg-stone-100 rounded-full p-1.5 transition-colors"
@@ -48,7 +48,7 @@ const LocationDetailPanel: React.FC<LocationDetailPanelProps> = ({ location, onC
                 alt="logo"
                 className="w-7 h-7 object-contain drop-shadow-sm flex-shrink-0"
               />
-              <h2 className="text-3xl font-display text-ink mb-1 drop-shadow-sm">
+              <h2 className="text-2xl sm:text-3xl font-display text-ink mb-1 drop-shadow-sm">
                   {location.name}
               </h2>
             </div>
@@ -69,7 +69,7 @@ const LocationDetailPanel: React.FC<LocationDetailPanelProps> = ({ location, onC
         </div>
 
         {/* Content Container */}
-        <div className="p-6 pt-4 overflow-y-auto flex-1 custom-scrollbar relative z-10">
+        <div className="p-4 sm:p-6 pt-3 sm:pt-4 overflow-y-auto flex-1 custom-scrollbar relative z-10">
           
           {/* Description */}
           <div className="mb-8">
